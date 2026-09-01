@@ -1,0 +1,11 @@
+title = "goatswap"
+
+[allowlist]
+  description = "Noise from lockfiles, maps, and this config"
+  paths = [
+    '''gitleaks\.toml''',
+    '''(.*?)(package-lock\.json|pnpm-lock\.yaml|yarn\.lock|bun\.lock|bun\.lockb|Cargo\.lock|poetry\.lock|composer\.lock)$''',
+    '''(.*?)(\.min\.js|\.min\.css|\.map)$''',
+    '''(.*?)(go\.sum)$''',
+    '''^\.git/''',
+  ]
