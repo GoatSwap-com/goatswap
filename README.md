@@ -4,7 +4,7 @@
 
 Web application for [goatswap.com](https://goatswap.com): marketing pages, cross-chain swaps via [LI.FI](https://li.fi/), wallet connection, staking, and airdrop flows.
 
-This repository contains the **Nuxt interface and Nitro API routes** in this tree. It does **not** include smart-contract source, a separate SDK package, or the external connector service referenced in `nuxt.config.ts` (defaults point at `localhost:3010`).
+This repository contains the **Nuxt interface and Nitro API routes** in this tree. It does **not** include smart-contract source or a separate SDK package.
 
 ## Overview
 
@@ -33,9 +33,6 @@ Browser (Vue 3 + Nuxt 4)
 
 Nitro (server/)
   └── /napi/airdrop/*  →  JSON file store (local dev; not committed)
-
-External (not in this repo)
-  └── Connector widget + static assets (NUXT_PUBLIC_CONNECTOR_* URLs)
 ```
 
 ## Supported networks
@@ -81,9 +78,7 @@ All variables are optional for local development; defaults are in `nuxt.config.t
 
 | Variable | Purpose |
 | --- | --- |
-| `NUXT_PUBLIC_CONNECTOR_SCRIPT_URL` | URL of the external widget bundle |
-| `NUXT_PUBLIC_STATIC_URL` | Base URL for wallet icons and static connector assets |
-| `NUXT_PUBLIC_CONNECTOR_API_URL` | API base for the connector service |
+| `NUXT_PUBLIC_WALLET_ICONS_URL` | Base URL for wallet icons (default: `/wallets/`) |
 | `NUXT_PUBLIC_WX` | Airdrop contract address (public on-chain) |
 | `NUXT_PUBLIC_TOKEN` | Airdrop token address (public on-chain) |
 | `NUXT_PUBLIC_STAKING` | Staking contract address (public on-chain) |

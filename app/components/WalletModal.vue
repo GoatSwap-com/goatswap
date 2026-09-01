@@ -54,35 +54,35 @@ const emit = defineEmits(['close', 'select'])
 
 const config = useRuntimeConfig();
 
-const staticUrl = config.public.staticUrl || 'http://localhost:3010/public/';
+const walletIconsUrl = config.public.walletIconsUrl || '/wallets/';
 
 const wallets = [
   {
     id: 'metamask',
     name: 'MetaMask',
     desc: 'Most popular EVM wallet',
-    icon: staticUrl + 'metamask.png',
+    icon: walletIconsUrl + 'metamask.svg',
     color: 'linear-gradient(135deg, rgba(243,146,55,0.2), rgba(243,146,55,0.05))',
   },
   {
     id: 'walletconnect',
     name: 'WalletConnect',
     desc: 'Connect any mobile wallet',
-    icon: staticUrl + 'walletconnect.png',
+    icon: walletIconsUrl + 'walletconnect.svg',
     color: 'linear-gradient(135deg, rgba(59,153,252,0.2), rgba(59,153,252,0.05))',
   },
   {
     id: 'coinbase',
     name: 'Coinbase Wallet',
     desc: 'Simple & secure',
-    icon: staticUrl + 'coinbase.png',
+    icon: walletIconsUrl + 'coinbase.svg',
     color: 'linear-gradient(135deg, rgba(0,82,255,0.2), rgba(0,82,255,0.05))',
   },
   {
     id: 'trust',
     name: 'Trust Wallet',
     desc: 'Multi-chain wallet',
-    icon: staticUrl + 'trust.png',
+    icon: walletIconsUrl + 'trust.svg',
     color: 'linear-gradient(135deg, rgba(51,117,255,0.2), rgba(51,117,255,0.05))',
   },
 ]

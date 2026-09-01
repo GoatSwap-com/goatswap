@@ -59,13 +59,7 @@ export default defineNuxtConfig({
 
   runtimeConfig: {
     public: {
-      // URL to the built widget bundle (served from your NestJS /public/ or CDN)
-      // Override in production: NUXT_PUBLIC_CONNECTOR_SCRIPT_URL=https://yourdomain.com/widget.umd.js
-      connectorScriptUrl: process.env.NUXT_PUBLIC_CONNECTOR_SCRIPT_URL || 'http://localhost:3010/public/widget.umd.js',
-      staticUrl: process.env.NUXT_PUBLIC_STATIC_URL || 'http://localhost:3010/public/',
-      // API base URL for the widget to fetch config and connect WS
-      // Override in production: NUXT_PUBLIC_CONNECTOR_API_URL=https://api.yourdomain.com
-      connectorApiUrl: process.env.NUXT_PUBLIC_CONNECTOR_API_URL || 'http://localhost:3010',
+      walletIconsUrl: process.env.NUXT_PUBLIC_WALLET_ICONS_URL || '/wallets/',
       airdropContract: process.env.NUXT_PUBLIC_WX || '0xa4b03CEa2f67cC4f1d60Ed14c7f05D098788d2b6',
       airdropToken: process.env.NUXT_PUBLIC_TOKEN || '0xd1770254071Be4d7b26683191Dc6C0D2E8dBD7Da',
       stakingContract: process.env.NUXT_PUBLIC_STAKING || '0x926a2FaB7a26C946f5A1A217DF89cA345B9F6364' // Deployed SimpleStaking

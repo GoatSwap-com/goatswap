@@ -332,31 +332,31 @@ const STAKING_CONTRACT_ADDRESS = config.public.stakingContract
 const TOKEN_ADDRESS = config.public.airdropToken || '0xd1770254071Be4d7b26683191Dc6C0D2E8dBD7Da'
 const explorerBase = 'https://sepolia.etherscan.io'
 
-const staticUrl = config.public.staticUrl || 'http://localhost:3010/public/'
+const walletIconsUrl = config.public.walletIconsUrl || '/wallets/'
 
 const swiperWallets = [
   {
     id: 'metamask',
     name: 'MetaMask',
-    icon: staticUrl + 'metamask.png',
+    icon: walletIconsUrl + 'metamask.svg',
     color: 'linear-gradient(135deg, rgba(243,146,55,0.2), rgba(243,146,55,0.05))',
   },
   {
     id: 'walletconnect',
     name: 'WalletConnect',
-    icon: staticUrl + 'walletconnect.png',
+    icon: walletIconsUrl + 'walletconnect.svg',
     color: 'linear-gradient(135deg, rgba(59,153,252,0.2), rgba(59,153,252,0.05))',
   },
   {
     id: 'coinbase',
     name: 'Coinbase Wallet',
-    icon: staticUrl + 'coinbase.png',
+    icon: walletIconsUrl + 'coinbase.svg',
     color: 'linear-gradient(135deg, rgba(0,82,255,0.2), rgba(0,82,255,0.05))',
   },
   {
     id: 'trust',
     name: 'Trust Wallet',
-    icon: staticUrl + 'trust.png',
+    icon: walletIconsUrl + 'trust.svg',
     color: 'linear-gradient(135deg, rgba(51,117,255,0.2), rgba(51,117,255,0.05))',
   },
 ]
