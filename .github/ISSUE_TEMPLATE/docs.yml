@@ -1,0 +1,17 @@
+name: Docs
+description: Improve README or developer documentation
+title: "[docs] "
+labels: ["documentation"]
+body:
+  - type: textarea
+    id: gap
+    attributes:
+      label: What is missing or wrong?
+      placeholder: Which file, and what should it say?
+    validations:
+      required: true
+  - type: input
+    id: source
+    attributes:
+      label: Related page (if any)
+      placeholder: https://goatswap.com/about

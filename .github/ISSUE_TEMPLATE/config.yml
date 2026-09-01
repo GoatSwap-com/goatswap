@@ -1,0 +1,11 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Live app
+    url: https://goatswap.com
+    about: Open goatswap.com in the browser.
+  - name: How it works
+    url: https://goatswap.com/how-it-works
+    about: Product walkthrough on the live site.
+  - name: Security vulnerability
+    url: https://github.com/GoatSwap/goatswap/security/advisories/new
+    about: Report a security issue privately when advisory reporting is enabled. See SECURITY.md.

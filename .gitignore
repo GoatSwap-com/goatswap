@@ -1,0 +1,43 @@
+# Nuxt / Nitro
+.output
+.data
+.nuxt
+.nitro
+.cache
+dist
+
+# Node
+node_modules
+
+# Logs
+logs
+*.log
+
+# Local env (keep .env.example)
+.env
+.env.*
+!.env.example
+
+# OS / editors
+.DS_Store
+Thumbs.db
+.fleet
+.idea/
+.vscode/
+
+# Keys and local secret stores
+*.pem
+*.key
+*.p12
+*.pfx
+secrets/
+
+# Airdrop eligibility and claim state (do not publish)
+server/data/airdrop-users.json
+server/data/airdrop-users.json.tmp
+server/data/*.tmp
+
+# Test / scratch
+coverage/
+.tmp/
+temp/

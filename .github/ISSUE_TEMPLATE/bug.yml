@@ -1,0 +1,52 @@
+name: Bug
+description: Something in this application does not work as expected
+title: "[bug] "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Security issues belong in [SECURITY.md](https://github.com/GoatSwap/goatswap/blob/main/SECURITY.md), not in a public bug report.
+  - type: dropdown
+    id: surface
+    attributes:
+      label: Surface
+      options:
+        - Web UI (pages / components)
+        - LI.FI swap widget
+        - Wallet connection
+        - Staking page
+        - Airdrop page or /napi/airdrop API
+        - Build / CI
+        - Documentation
+        - Other
+    validations:
+      required: true
+  - type: input
+    id: page
+    attributes:
+      label: URL or route
+      placeholder: /staking or https://goatswap.com/airdrop
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behaviour
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual behaviour
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+    validations:
+      required: true
+  - type: input
+    id: environment
+    attributes:
+      label: Environment
+      placeholder: npm run dev · Chrome · Windows 11

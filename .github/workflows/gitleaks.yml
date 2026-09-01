@@ -1,0 +1,64 @@
+name: Gitleaks
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: gitleaks-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  GITLEAKS_VERSION: "8.24.2"
+
+jobs:
+  gitleaks:
+    name: gitleaks
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+
+      - name: Install Gitleaks
+        run: |
+          set -euo pipefail
+          ARCHIVE="gitleaks_${GITLEAKS_VERSION}_linux_x64.tar.gz"
+          URL="https://github.com/gitleaks/gitleaks/releases/download/v${GITLEAKS_VERSION}/${ARCHIVE}"
+          curl -sSLf "$URL" -o /tmp/gitleaks.tgz
+          tar -xzf /tmp/gitleaks.tgz -C /usr/local/bin gitleaks
+          gitleaks version
+
+      - name: Detect secrets
+        run: |
+          set -euo pipefail
+          CONFIG_ARGS=()
+          if [ -f gitleaks.toml ]; then
+            CONFIG_ARGS=(--config gitleaks.toml)
+          fi
+
+          if [ "${{ github.event_name }}" = "pull_request" ]; then
+            gitleaks detect \
+              --source . \
+              "${CONFIG_ARGS[@]}" \
+              --log-opts "--no-merges --first-parent ${{ github.event.pull_request.base.sha }}..${{ github.event.pull_request.head.sha }}" \
+              --redact \
+              --verbose \
+              --exit-code 1
+          else
+            gitleaks detect \
+              --source . \
+              "${CONFIG_ARGS[@]}" \
+              --redact \
+              --verbose \
+              --exit-code 1
+          fi

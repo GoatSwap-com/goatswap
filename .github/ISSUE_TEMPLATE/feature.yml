@@ -1,0 +1,40 @@
+name: Feature
+description: Propose a change to the Nuxt app or Nitro API in this repository
+title: "[feat] "
+labels: ["enhancement"]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem
+      placeholder: What is missing or painful today?
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposal
+    validations:
+      required: true
+  - type: dropdown
+    id: area
+    attributes:
+      label: Area
+      options:
+        - Swap / LI.FI integration
+        - Wallet UX
+        - Staking
+        - Airdrop
+        - Marketing pages
+        - Server / API
+        - Developer experience
+        - Other
+    validations:
+      required: true
+  - type: checkboxes
+    id: scope
+    attributes:
+      label: Scope check
+      options:
+        - label: This change is limited to this repository (no new org repos required)
+        - label: This needs coordination with the live goatswap.com deployment
